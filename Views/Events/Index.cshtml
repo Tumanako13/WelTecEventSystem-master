@@ -1,0 +1,125 @@
+﻿@model IEnumerable<WelTecEventSystem.Models.Event>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" class="init">
+        $(document).ready(function () {
+            $('#eventTable').DataTable();
+        });
+    </script>
+</head>
+
+<body class="container-fluid">
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table id="eventTable" class="display responsive table table-striped table-bordered table-hover" style="width:100%">
+        <thead>
+            <tr>
+                @*column headers*@
+                <th>
+                    Edit/Details/Delete
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventImage1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventImage2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventImage3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventLocation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventClassroom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventHost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventRequirements)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaxNumberOfParticipants)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                @*row data*@
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.EventName">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.EventName">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.EventName">Delete</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventImage1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventImage2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventImage3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventClassroom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventHost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventRequirements)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaxNumberOfParticipants)
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

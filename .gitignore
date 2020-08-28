@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Data/WelTecOnlineRegistration.ldf
+/Data/WelTecOnlineRegistration.mdf
+/Data/WelTecOnlineRegistration_log.ldf
